@@ -15,5 +15,8 @@
     "bugs": {
         "url": "https://github.com/zhuji96/tool-library/issues"
     },
-    "homepage": "https://github.com/zhuji96/tool-library#readme"
+    "homepage": "https://github.com/zhuji96/tool-library#readme",
+    "devDependencies": {
+        "jest": "^24.8.0"
+    }
 }
