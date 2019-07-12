@@ -1,6 +1,8 @@
-const assert = require("assert").strict;
-const _ = require("./index");
+const _ = require("../src");
 
+test("null.a", () => {
+    expect(_.get(null, ["a"], "default")).toBe("default");
+});
 // assert.strictEqual(_.get(null, ["a"], "default"), "default", "null.a");
 // assert.strictEqual(
 //     _.get(undefined, ["a"], "default"),
@@ -22,4 +24,3 @@ const _ = require("./index");
 //     "default",
 //     "[{a:1}][0].b"
 // );
-console.log(_.map({ 0: 1, 1: 2, length: 2 }, null));
