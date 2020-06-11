@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "启动程序",
             "skipFiles": ["<node_internals>/**"],
-            "program": "${env:HOME}/Documents/Github/my-js-library/src/lazyman.js",
+            "program": "${env:HOME}/Documents/Github/my-js-library/src/arrayMap.js",
             "runtimeExecutable": "${env:HOME}/.nvm/versions/node/v10.16.0/bin/node"
         }
     ]
