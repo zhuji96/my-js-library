@@ -1,23 +1,27 @@
-function deepClone(source) {
+function deepClone(source, map = new Map()) {
     if (source == null) {
-        return null
+        return null;
     }
     if (isPrimitive(source)) {
-        return source
+        return source;
     }
     if (isObject(source)) {
+        if (map.get(source)) {
+            return source;
+        }
         const res = {};
-        getKeys(source).forEach(key => {
-            res[key] = deepClone(source[key])
+        map.set(source, res);
+        getKeys(source).forEach((key) => {
+            res[key] = deepClone(source[key], map);
         });
         return res;
     }
     if (isArray(source)) {
-        return source.map(val => deepClone(val));
+        return source.map((val) => deepClone(val));
     }
 }
 
-function getKeys(sourceObj, {onlySelf=true, onlyEnumerable=true}) {
+function getKeys(sourceObj, { onlySelf = true, onlyEnumerable = true }) {
     if (onlySelf === true && onlyEnumerable === true) {
         return Object.keys(sourceObj);
     }
